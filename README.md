@@ -1,4 +1,5 @@
-- 👋 Hi, I’m @huyquoctrinh
+## 👋 Hi, I’m @huyquoctrinh
+
 - 👀 I’m interested in Deep Learning, Machine Learning, Computer Vision, Computer Graphic, NLP, MLops, Medical Imageing and A.I modeling. Moreover, I have some experiences in Software Engineering, and System operation. 
 - 🌱 I’m currently a student at University of Science, VNU-HCM and also a Machine Learning Engineer at [Spex A.I GMBH](https://www.spexai.com/)
 - 💞️ I’m looking to collaborate on Research in Computer Vision and Machine Learning basic algorithm.
