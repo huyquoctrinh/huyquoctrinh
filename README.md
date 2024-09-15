@@ -2,7 +2,7 @@
 
 
 - 👀 I’m interested in Deep Learning, Machine Learning, Computer Vision, Computer Graphic, NLP, MLops, Medical Imageing and A.I modeling. Moreover, I have some experiences in Software Engineering, and System operation. 
-- 🌱 I’m currently a Master student in Computer Science at Aalto University, Finland, and also a Lead Machine Learning Engineer at [Spex A.I GMBH](https://www.spexai.com/), Moreover, I am a Research Assistant at Bagci Lab at Northwestern University.
+- 🌱 I’m currently a Master student in Computer Science at Aalto University, Finland; and a Research Assistant at Bagci Lab at Northwestern University. I am also a Lead Machine Learning Engineer at [Spex A.I GMBH](https://www.spexai.com/).
 - 💞️ I’m looking to collaborate on Research in Computer Vision, and Machine Learning basic algorithm, I have also had some research in Computer Vision field, everything in [scholar](https://scholar.google.com/citations?user=VQwSY1gAAAAJ&hl=en).
 
 
