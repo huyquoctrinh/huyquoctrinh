@@ -2,7 +2,7 @@
 
 
 - 👀 I’m interested in Deep Learning, Machine Learning, Computer Vision, Computer Graphic, NLP, MLops, Medical Imageing and A.I modeling. Moreover, I have some experiences in Software Engineering, and System operation. I got my honor bachelor's degree in Information Technology at HCMUS VNU-HCM.
-- 🌱 I’m currently a Master student in Computer Science at Aalto University, Finland; and a Research Assistant at [Bagci Lab](https://www.bagcilab.com/) at Northwestern University, Chicago, USA. I am also a Lead Machine Learning Engineer at [Spex A.I GMBH](https://www.spexai.com/) (Germany), and a Researcher at [SongGen A.I](https://www.songgen.ai/) (In the US).
+- 🌱 I’m currently a Master student in Computer Science at Aalto University, Finland; and a Research Assistant at [Bagci Lab](https://www.bagcilab.com/) at Northwestern University, Chicago, USA. I am also a Lead Machine Learning Engineer at [Spex A.I GMBH](https://www.spexai.com/) (Germany), and a A.I Researcher at [SongGen A.I](https://www.songgen.ai/) (In the US).
 - 💞️ I’m looking to collaborate on Research in Computer Vision, Deep Learning, LLM/Multimodal-LLM, I have also had some research in Computer Vision and Deep Learning field, everything in [scholar](https://scholar.google.com/citations?user=VQwSY1gAAAAJ&hl=en).
 
 
