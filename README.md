@@ -3,7 +3,7 @@
 
 - 👀 I’m interested in Deep Learning, Machine Learning, Computer Vision, Computer Graphic, NLP, MLops, Medical Imageing and A.I modeling. Moreover, I have some experiences in Software Engineering, and System operation. I got my honor bachelor's degree in Information Technology at HCMUS VNU-HCM.
 - 🌱 I’m currently a Master student in Computer Science at Aalto University, Finland; a Research Assistant at [Bagci Lab](https://www.bagcilab.com/) at Northwestern University, Chicago, USA, and a Visiting Researcher at CMU, in collaboration with Professor [Min Xu](https://xulabs.github.io/min-xu/) for Large Vision Language Model project. I am also a Lead Machine Learning Engineer at [Spex A.I GMBH](https://www.spexai.com/) (Germany).
-- 💞️ I’m looking to collaborate on Research in Computer Vision, Deep Learning, LLM/Multimodal-LLM, I have also had some research in Computer Vision and Deep Learning field, everything in [scholar](https://scholar.google.com/citations?user=VQwSY1gAAAAJ&hl=en).
+- 💞️ I’m looking for a PhD position (preferred in EU/US/Sing)  in Computer Vision, Deep Learning, LLM/Multimodal-LLM, I had some research in Computer Vision and Deep Learning field, everything in [scholar](https://scholar.google.com/citations?user=VQwSY1gAAAAJ&hl=en).
 
 
 - 📫 Reach me via:
