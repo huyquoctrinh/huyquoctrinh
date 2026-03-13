@@ -1,349 +1,1097 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Quoc-Huy Trinh</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-h-character-alphabet-letter-32852.png" type="image/icon type">
-   
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-h-character-alphabet-letter-32852.png">
+    <style>
+        :root {
+            --primary: #1900FF;
+            --primary-dark: #1200cc;
+            --primary-soft: rgba(25, 0, 255, 0.08);
+            --text: #1a1a1a;
+            --text-light: #555;
+            --bg: #ffffff;
+            --bg-alt: #f8f9fa;
+            --border: #e5e7eb;
+            --nav-height: 60px;
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.65;
+        }
+
+        /* ── NAV ── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.96);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            height: var(--nav-height);
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            gap: 2rem;
+        }
+
+        .nav-brand {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            margin-right: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 0.35rem 0.65rem;
+            border-radius: 6px;
+            transition: color 0.15s, background 0.15s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: var(--primary-soft);
+        }
+
+        /* ── LAYOUT ── */
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-child { border-bottom: none; }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .section-title .icon {
+            color: #374151;
+            font-size: 1.1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), transparent);
+            margin-left: 0.6rem;
+            border-radius: 2px;
+        }
+
+        /* ── ABOUT ── */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .about-photo-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .profile-photo {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: 0 4px 16px rgba(25,0,255,0.18);
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+            width: 100%;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text);
+            border: 1px solid var(--border);
+            transition: all 0.18s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .social-link i { width: 14px; text-align: center; }
+
+        .about-bio h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .about-bio .subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .about-bio p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .research-interests { margin-top: 1rem; }
+
+        .research-interests h3 {
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 0.7rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .interest-tag {
+            background: var(--primary-soft);
+            color: var(--primary);
+            padding: 0.25rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            border: 1px solid rgba(25,0,255,0.15);
+        }
+
+        .phd-notice {
+            margin-top: 1.1rem;
+            padding: 0.7rem 1rem;
+            background: linear-gradient(135deg, rgba(25,0,255,0.05), rgba(25,0,255,0.09));
+            border-left: 3px solid var(--primary);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ── EDUCATION ── */
+        .edu-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid var(--bg-alt);
+        }
+
+        .edu-item:last-child { border-bottom: none; }
+
+        .edu-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #374151;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .edu-content h3 { font-size: 0.92rem; font-weight: 600; }
+        .edu-content p  { font-size: 0.83rem; color: var(--text-light); }
+
+        /* ── PUBLICATIONS ── */
+        .year-group { margin-bottom: 1.8rem; }
+
+        .year-label {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.7rem;
+            padding-bottom: 0.35rem;
+            border-bottom: 2px solid rgba(25,0,255,0.12);
+        }
+
+        .pub-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--bg-alt);
+        }
+
+        .pub-item:last-child { border-bottom: none; }
+
+        .pub-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+            line-height: 1.45;
+        }
+
+        .pub-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+        }
+
+        /* venue badges */
+        .vbadge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.18rem 0.55rem;
+            border-radius: 4px;
+            font-size: 0.73rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.15s, transform 0.1s;
+            line-height: 1.4;
+        }
+
+        .vbadge:hover { opacity: 0.82; transform: translateY(-1px); }
+
+        .vbadge img {
+            width: 13px;
+            height: 13px;
+            object-fit: contain;
+            border-radius: 2px;
+        }
+
+        .vbadge i { font-size: 10px; }
+
+        .b-ieee     { background: #00629B; color: #fff; }
+        .b-arxiv    { background: #B31B1B; color: #fff; }
+        .b-cvpr     { background: #1e4e8c; color: #fff; }
+        .b-bmvc     { background: #2d2d2d; color: #fff; }
+        .b-acm      { background: #0085CA; color: #fff; }
+        .b-springer { background: #E87722; color: #fff; }
+        .b-elsevier { background: #FF6C00; color: #fff; }
+        .b-journal  { background: #2e7d32; color: #fff; }
+        .b-spie     { background: #7B1FA2; color: #fff; }
+        .b-other    { background: #546e7a; color: #fff; }
+        .b-award    { background: #f59e0b; color: #1a1a1a; }
+
+        .pub-note {
+            font-size: 0.76rem;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* ── EXPERIENCE ── */
+        .exp-item {
+            display: flex;
+            gap: 0.85rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--bg-alt);
+            align-items: flex-start;
+        }
+
+        .exp-item:last-child { border-bottom: none; }
+
+        .exp-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #9ca3af;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        .exp-content h3 { font-size: 0.9rem; font-weight: 600; }
+        .exp-content p  { font-size: 0.83rem; color: var(--text-light); margin-top: 0.1rem; }
+        .exp-content a  { color: var(--primary); text-decoration: none; }
+        .exp-content a:hover { text-decoration: underline; }
+
+        .exp-period {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* ── SERVICE ── */
+        .service-subsection {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .service-subsection:first-child { margin-top: 0; }
+
+        .service-item {
+            padding: 0.4rem 0;
+            font-size: 0.88rem;
+            border-bottom: 1px solid var(--bg-alt);
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .service-item:last-child { border-bottom: none; }
+
+        .service-item::before {
+            content: '›';
+            color: #9ca3af;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* ── AWARDS ── */
+        .award-item {
+            display: flex;
+            gap: 0.9rem;
+            padding: 0.45rem 0;
+            border-bottom: 1px solid var(--bg-alt);
+            align-items: baseline;
+            font-size: 0.88rem;
+        }
+
+        .award-item:last-child { border-bottom: none; }
+
+        .award-year {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #d97706;
+            min-width: 38px;
+        }
+
+        /* ── OPEN SOURCE ── */
+        .repo-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            transition: border-color 0.18s, box-shadow 0.18s;
+            margin-bottom: 0.75rem;
+        }
+
+        .repo-card:hover {
+            border-color: #9ca3af;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+
+        .repo-card-icon {
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .repo-card-body h3 {
+            font-size: 0.92rem;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
+        .repo-card-body p {
+            font-size: 0.83rem;
+            color: var(--text-light);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--bg-alt);
+            border-top: 1px solid var(--border);
+            padding: 1.4rem;
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--text-light);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 680px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .about-photo-col { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
+            .profile-photo { width: 120px; height: 120px; }
+            .social-links { flex-direction: row; flex-wrap: wrap; }
+            .social-link { flex: 1 1 120px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
 <body>
 
-    <header class="header">
-        
-        <nav class="nav" style="display: flex">
+<!-- ════════════════════════════════════════
+     NAVIGATION
+═════════════════════════════════════════ -->
+<nav>
+    <a href="#about" class="nav-brand">
+        <i class="fa fa-code"></i>
+        Quoc-Huy Trinh
+    </a>
+    <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#industry">Industry</a></li>
+        <li><a href="#academic-exp">Academic Exp.</a></li>
+        <li><a href="#academic-service">Service</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#opensource">Open Source</a></li>
+    </ul>
+</nav>
 
-            <div>
+<main>
 
-                <i class="fa fa-code" style="font-size:48px;color:rgb(25, 0, 255)"></i>
-                
-    
+    <!-- ══════════════════════════════════
+         ABOUT ME
+    ═══════════════════════════════════ -->
+    <section id="about">
+        <div class="about-grid">
+
+            <!-- photo + social -->
+            <div class="about-photo-col">
+                <img class="profile-photo" src="./huy.jpg" alt="Quoc-Huy Trinh">
+                <div class="social-links">
+                    <a class="social-link" href="https://www.linkedin.com/in/huy-quoc-450459161/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a class="social-link" href="https://scholar.google.com/citations?user=VQwSY1gAAAAJ&hl=en" target="_blank">
+                        <i class="fas fa-graduation-cap"></i> Scholar
+                    </a>
+                    <a class="social-link" href="https://github.com/huyquoctrinh" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a class="social-link" href="mailto:trnhquchuy@yahoo.com.vn">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a class="social-link" href="https://drive.google.com/drive/folders/1bl-qgxJdpaIf_KxpLGqctbzZltnwOYov?usp=sharing" target="_blank">
+                        <i class="fas fa-file-alt"></i> CV / Papers
+                    </a>
+                </div>
             </div>
 
-            <div style="display: flex; margin-right: 10;">
+            <!-- bio -->
+            <div class="about-bio">
+                <h2>Quoc-Huy Trinh</h2>
+                <p class="subtitle">Deep Generative Model &nbsp;·&nbsp; Computer Vision &nbsp;·&nbsp; Medical Imaging &nbsp;·&nbsp; Music Generation</p>
+                <p>
+                    Hi, I am Huy, a Vietnamese researcher currently pursuing a Master's in Computer Science at Aalto University (GPA: 4.82/5).
+                    My research is supervised by Prof. Minh-Triet Tran, Prof. Ulas Bagci, Prof. Sebastian Szyller, Prof. Bo Zhao, Dr. Debesh Jha, and Msc. Hai-Dang Nguyen.
+                </p>
+                <p>
+                    I am also a Research Assistant at <a href="https://www.bagcilab.com/" target="_blank" style="color:var(--primary)">Bagci Lab (Northwestern University)</a>,
+                    a Visiting Researcher collaborating with Prof. <a href="https://xulabs.github.io/min-xu/" target="_blank" style="color:var(--primary)">Min Xu at CMU</a>,
+                    and a Lead Machine Learning Engineer at <a href="https://www.spexai.com/" target="_blank" style="color:var(--primary)">Spex A.I GmbH</a>.
+                </p>
 
-                <ul  style ="list-style-type: none; display: flex; margin-top: 17px; margin-right: 1%; 
-                column-gap: 3rem; display: inline-flex-block; gap: 1.5rem; align-items: center; position: absolute; right: 0;">
-                <a style="font-size:20px;color:rgb(25, 0, 255)">Quoc-Huy Trinh</a>
-                    <!-- <li class = "li"> 
-                        <a href = "#" style="font-size:30px;color:rgb(25, 0, 255); text-decoration: none">Research</a>
-                    </li>
-
-                    <li class = "li"> 
-                        <a href = "#" style="font-size:30px;color:rgb(25, 0, 255); text-decoration: none">Working</a>
-                    </li>
-
-                    <li class = "li"> 
-                        <a href = "#" style="font-size:30px;color:rgb(25, 0, 255); text-decoration: none">News</a>
-                    </li> -->
-
-                </ul>
-                
+                <div class="research-interests">
+                    <h3>Research Interests</h3>
+                    <div class="interest-tags">
+                        <span class="interest-tag">Computer Vision</span>
+                        <span class="interest-tag">Medical Imaging</span>
+                        <span class="interest-tag">Music Generation</span>
+                        <span class="interest-tag">Signal Processing</span>
+                        <span class="interest-tag">LLM / VLM / VLA</span>
+                        <span class="interest-tag">Diffusion Models</span>
+                        <span class="interest-tag">Robot Policy Control</span>
+                        <span class="interest-tag">Face Biometrics</span>
+                        <span class="interest-tag">Re-Identification</span>
+                        <span class="interest-tag">Talking Head</span>
+                        <span class="interest-tag">Graph Learning</span>
+                        <span class="interest-tag">Face Anti-Spoofing</span>
+                    </div>
+                </div>
             </div>
 
-        </nav>
+        </div>
+    </section>
 
-        <div style="background-color: black; width: 100vw; height: 1px; margin-top: 8px; margin-bottom: 8px;"></div>
-        
-    </header>    
+    <!-- ══════════════════════════════════
+         EDUCATION
+    ═══════════════════════════════════ -->
+    <section id="education">
+        <h2 class="section-title"><i class="fas fa-university icon"></i> Education</h2>
 
-    <div>
-
-        <div >
-
-            <div style="display: flex; justify-content: center;">
-
-                <!-- <h2>Quoc-Huy Trinh</h2> -->
-
-            </div>
-
-            <div style="width: 100; height: 100; object-fit: cover; display: flex; justify-content: center;">                
-                <img class="my__fav__img" src="./huy.jpg" width="30%" height="5%">
+        <div class="edu-item">
+            <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="edu-content">
+                <h3>Master of Science in Computer Science — Aalto University, Finland</h3>
+                <p>GPA: 4.82 / 5</p>
             </div>
         </div>
 
-        <div>
-            <h1 style="display: flex;">Quoc-Huy Trinh</h1>
-            <p style="font-size: 30;">
-                I am Quoc-Huy Trinh, a Vietnamese researcher. My current research is supervised by Prof.Minh-Triet Tran, Prof.Ulas Bagci, Dr.Debesh Jha, and Msc.Hai-Dang Nguyen. 
-                <br>
-                My research interests are in Computer Vision, Medical Imaging, and Music Generation. Moreover, I am interested in Signal Processing, LLM, VLM, VLA, and Diffusion for Robot Policy Control, and Face Biometric.
-                <br>
-                <b> Music Generation: </b>
-                <br> 
-                - Music understanding model
-                <br>
-                - Singing Voice Synthesize
-                <br>
-                - Accompaniment Generation
-                <br>
-                <b>Medical imaging Topic:</b>
-                <br>
-                - Skin, Brain, Colectoral Lesion Detection.
-                <br>
-                - Skin, Brain tumor, Colonscopy image segmentation.
-                <br>
-                - Medical imaging retrieval.
-                <br>
-                <b>Face Biometric topic:</b>
-                <br>
-                - Face Recognition
-                <br>
-                - Face Anti-Spoofing
-                <br>
-                <b>Graph Representation Learning</b>
-                <br>
-                - Application of Graph in Computer Vision
-                <br>
-                - Graph theory for downstream task
-                <br>
-                <b>Re-Identification embedding model</b>
-                <br>
-                - Person Re-Identification model in the standard clothes.
-                <br>
-                - Person Re-Identification in Cloth-changing
-                <br>
-                - Person Re-Identification with Occluded images
-                <br>
-                - Multimodal for variant data adapt Re-Identification problem.
-                <br>
-                <b>Talking head</b>
-                <br>
-                - Landmark generation approach for Talking Head
-                <br>
-                - Improve Landmark2Face for Talking Head problem
-                <br>
-            </p>
-            <p>
-                <h2>My social page:</h2>
-
-                    - <a href="https://www.linkedin.com/in/huy-quoc-450459161/">Linkdln</a> 
-                    <br>
-                    - <a href="https://scholar.google.com/citations?user=VQwSY1gAAAAJ&hl=en">Scholar</a> 
-                    <br>
-                    - <a href="https://github.com/huyquoctrinh">Github</a> 
-                
-            </p>
-
-            <h3>
-                I am looking for the PhD opportunity in Computer Vision or Music Analysis and Generation!!
-            </h3>
+        <div class="edu-item">
+            <div class="edu-icon"><i class="fas fa-award"></i></div>
+            <div class="edu-content">
+                <h3>Bachelor of Science (Honor Program) in Information Technology — University of Science, VNU-HCM</h3>
+                <p>GPA: 3.58 / 4.0 &nbsp;·&nbsp; Thesis: 4.0 / 4.0</p>
+            </div>
         </div>
-    
-        <div>
-            <h1>Education</h1>
-            <p>
-                    - Master in Computer Science at Aalto University (GPA: 4.6/5)
-                    <br>
-                    - Visting Researcher at Northwestern University 
-                    <br>
-                    - Bachelor of Honor Program in Information Technology at University of Science, VNU-HCM (GPA: 3.58/4.0 - thesis 4.0/4.0)
-                    <br>
-                    - Student at Le Hong Phong highschool for the gifted
-            </p>
 
-            <h1><a href="https://drive.google.com/drive/folders/1bl-qgxJdpaIf_KxpLGqctbzZltnwOYov?usp=sharing">Research</a></h1>
-            <i style="font-weight: bold; font-size: 20px;">Publication</i>
-            <p style="font-size: 25;">
-                <a style="font-size: 25; font-weight: bold; color: blue;">2025</a>
-                <p>
-                    Upcoming
-                    <br>
-                    - CMATalk: Cross Modality Alignment for Talking Head Generation Multimedia and Application <a href=""> Multimedia and Application Journal - Q1 </a>
-                    <br>
-                    - PolypDB: A Curated Multi-Center Dataset for Development of AI Algorithms in Colonoscopy - <a href="https://arxiv.org/abs/2409.00045"> Arxiv </a>
-                    <br>
-                    - Sing-On-Your-Beat: Simple Text-Controllable Accompaniment Generations - <a href="https://arxiv.org/pdf/2411.01661"> Arxiv </a>
-                    <br>
-                    - NeIn: Telling What You Don't Want <a href="https://arxiv.org/pdf/2409.06481"> CVPRW 2025 </a>
-                </p>
-                <a style="font-size: 25; font-weight: bold; color: blue;">2024</a>
-                <p>
-                    - Validating polyp and instrument segmentation methods in colonoscopy through Medico 2020 and MedAI 2021 Challenges - <a href="https://www.sciencedirect.com/science/article/pii/S1361841524002329">Medical Image Analysis Journal</a>
-                    <br>
-                    - SAM-EG: Segment Anything Model with Edge Guidance framework for efficient Polyp Segmentation (Poster) - <a href="https://arxiv.org/abs/2406.14819"> BMVC 2024 </a>
-                    <br>
-                    - Pose-to-Human (P2H): A pose guidance framework via Gram matrix for Occluded Person Re-identification (Oral) - <a href="#"> KES 2024 </a>
-                    <br>
-                    - PDGS: Pose-Guided Deep Supervision for Mitigating Clothes-Changing in Person Re-Identification (Oral) - <a href="https://arxiv.org/html/2312.05634v3"> AVSS 2024 </a>
-                    <br>
-                    - KDAS: Knowledge distillation Framework via Attention Supervision for Polyp Segmentation (Oral) - <a href="https://arxiv.org/abs/2312.08555"> ICME 2024 </a>
-                    <br>
-                    - Pose Knowledge distill guidance: Effective Pose guide learning for Person Re-Identification (Oral) - <a href="https://dl.acm.org/doi/pdf/10.1145/3643487.3662171"> ICMR 2024 </a>
-                    <br>
-                    - EAPC: Emotion and Audio Prior Control framework for the emotional and temporal Talking Face Generation (Oral) - <a href="https://www.insticc.org/node/TechnicalProgram/icaart/2024/presentationDetails/124557"> ICAART 2024 </a>
-                    <br>
-                </p>
-                <a style="font-size: 25; font-weight: bold; color: blue;">2023</a>
-                <p>
-                    - ALGNet: Attention Light Graph Memory Network for Medical Recommendation System - <a href="https://dl.acm.org/doi/fullHtml/10.1145/3628797.3628983"> SOICT 2023 </a>
-                    <br>
-                    - SpeechSyncNet: Speech to Talking Landmark  via the fusion of prior frame landmark and the audio - <a href="https://ieeexplore.ieee.org/abstract/document/10402739/">VCIP 2023</a>
-                    <br>
-                    - An objective validation of polyp and instrument segmentation methods in colonoscopy through Medico 2020 polyp segmentation and MedAI 2021 transparency challenges <a href="https://arxiv.org/pdf/2307.16262">Medical Image Analysis - Q1</a>
-                    <br>
-                    - Graph for Transformer Feature: A New Approach for Face Anti-Spoofing - <a href="https://scholar.google.com/scholar?oi=bibs&cluster=13747788781553684069&btnI=1&hl=en">ESANN 2023</a>
-                    <br>
-                    - M2UNet: MetaFormer Multi-scale Upsampling Network for Polyp Segmentation - <a href="https://eurasip.org/Proceedings/Eusipco/Eusipco2023/pdfs/0001115.pdf">EUSIPCO 2023</a>
-                    <br>
-                    - Meta-Polyp: a baseline for efficient Polyp segmentation - <a href="https://www.computer.org/csdl/proceedings-article/cbms/2023/122400a742/1ORgmVyczT2">CBMS 2023</a>
-                    <br>
-                    - Tiny convolution contextual neural network: a lightweight model for skin lesion detection - <a href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12701/127010U/Tiny-convolution-contextual-neural-network--a-lightweight-model-for/10.1117/12.2679699.short">ICMV 2022</a>
-                    <br>
-                    - PEFNet: Positional Embedding Feature for Polyp Segmentation - <a href="https://link.springer.com/chapter/10.1007/978-3-031-27818-1_20">MMM 2023</a>
-                    <br>
-                 
-                </p>
-                <a style="font-size: 25; font-weight: bold; color: blue;">2022</a>
-                <p>
-                    - Multi Kernel Positional Embedding ConvNeXt for Polyp Segmentation - <a href="https://ieeexplore.ieee.org/abstract/document/10013883/">RIVF 2022</a>
-                    <br>
-                    - Ensemble of Deep Neural Networks for Rice Leaf Disease Classification (<i>Best paper award</i>) - <a href="https://ieeexplore.ieee.org/abstract/document/10013858/">RIVF 2022</a>
-                    <br>
-                    - Res-Dense Net for 3D Covid Chest CT-Scan Classification - <a href="https://link.springer.com/chapter/10.1007/978-3-031-13324-4_41">ICIAP 2022</a>
-                    <br>
-                    - EfficientNet for Brain-Lesion Classification - International Workshop, BrainLes 2021, <a href="https://link.springer.com/chapter/10.1007/978-3-031-08999-2_20">MICCAI 2022</a>
-                </p>
-                <a style="font-size: 25; font-weight: bold; color: blue;">2021</a>
-                <p>
-                    - SHREC 2021: Retrieval of cultural heritage objects - <a href="https://www.sciencedirect.com/science/article/pii/S0097849321001412">Journal Computer Graphic</a>
-                    <br>
-                    - Endoscopy Image Retrieval by Mixer Multi-Layer Perceptron - <a href="https://annals-csis.org/Volume_26/drp/pdf/145.pdf">Annals of Computer Science and Information Systems</a>
-                    <br>	
-                    - Dense-Res Net for Endoscopic Image Classification - <a href="https://www.csitcp.net/abstract/11/1111csit08">Machine Learning and Trend 2021</a>
-                </p>
-                
-            </p>
-            <i style="font-weight: bold; font-size: 20px;">Reviewer</i>
-            <p>
-                - ACM Multimedia 2025 - ACM MM
-                <br>
-                - IEEE Transactions on Circuits and Systems for Video Technology (Q1)
-                <br>
-                - 2025 International Conference on Computer Vision - ICCV
-                <br>
-                - Conference on Computer Vision and Pattern Recognition - CVPR
-                <br>
-                - European Conference on Computer Vision - ECCV
-                <br>
-                - Journal IEEE Transactions on Medical Imaging (TMI)
-                <br>
-                - International Conference on Multimedia and Expo - ICME
-                <br>
-                - International Conference on Multimedia Modeling - MMM
-                <br>
-                - International Conference on Medical Image Computing and Computer-Assisted Intervention - MICCAI
-                <br>
-                -  International Joint Conference on Neural Networks - IJCNN
-                <br>
-                - IEEE/CVF Winter Conference on Applications of Computer Vision - WACV 
-            </p>
+        <div class="edu-item">
+            <div class="edu-icon"><i class="fas fa-school"></i></div>
+            <div class="edu-content">
+                <h3>Le Hong Phong High School for the Gifted</h3>
+            </div>
+        </div>
+    </section>
 
-            
-        </div>
-        <div>
-            <h1>Industry experience</h1>
-            <p>
-                3/2024 - Now: Lead Machine Learning Engineer (<a href="https://www.spexai.com/">Spex A.I Gmbh</a>)
-                <br>
-                6/2025 - Now: Research Intern - (<a href="https://xulabs.github.io/min-xu/"> Xu lab, CMU </a>)
-                <br>
-                8/2024 - Now: Research Assistant (<a href="https://www.bagcilab.com/">Bagci Lab, Northwestern University</a>)
-                <br>
-                11/2024 - Now: Chief of A.I Platform (<a href="https://www.physicalrobotics.com/">Physical Robotics</a>
-                <br>
-                3/2024 - 5/2025: Senior Research Scientist (<a href="#">SongGen</a>)
-                <br> 
-                2022 - 2024: Data Scientist (<a href="https://vng.com.vn/">VNG Corporation</a>)
-                <br>
-                2022 - 2023: Research Intern (<a href="http://empathiccomputing.org/">Empathic Computing Lab</a>)
-                <br>
-                2020 - Now: Founder (<a href = "https://tivivui95.github.io/aeyes-web/">Aeyes-Smart Glasses for Blind</a>)
-                <br>
-                2021 - 2022: Software Developer (Microbox)
-                <br>
-                2021 - 2022: Research Intern (<a href="#">AIOZ</a>)
-                <br>
-                2020: BaoData (<a href="#">BaoData</a>)
-            </p>
-        </div>
-        <div>
-            <h1>Support</h1>
-            <p>
-                Partner of VinUni Entrepreneuer Lab
-                <br>
-                Ambassador at H4TF hackathon 2023
-                <br>
-                Mentor at Stem-Petrus Ky Le Hong Phong
-                <br>
-                Technical mentor at LHPSC
-            </p>
-        </div>
-        <div>
-            <h1>Award</h1>
-            <p>
-                Scholarship awarded by ICME 2024
-                <br>
-                2024: Best paper Award AI-SIPM at ICMR 2024
-                <br>
-                2023: Third prize of Vietnamese National of Invention 2023
-                <br>
-                2022: Second prize Vietnamese Invention for Society
-                <br>
-                2022: Excellent paper award ICMV 2022
-                <br>
-                2022: Best paper award RIVF 2022.
-                <br>
-                2022: First prize Innocity
-                <br>
-                2022: Top 1 Zoo hackathon
-                <br>
-                2021: Second prize Makethon (Have no first prize)
-                <br>
-                2021: Second Prize of Software for Student (Have no first prize)
-                <br>
-                2021: Top 2 best project in Tensorflow Community
-                <br>
-                2021: Second prize for Vietnamese Edtech Startup 2021.
-                <br>
-                2021: Top 2 Medical track - Mediaeval 2021
-                <br>
-                2021: Top 3 KO hackathon
-                <br>
-                2020: Top 3 Medical track - Mediaeval 2020
-                <br>
-                2020: Top 10/800 FGCV 2020, CVPR 2020
-                <br>
-                2020: Third prize for the Vietnam National Talent Youth in Computer Science
-                <br>
-                2019: Third prize for Vietnam National Science and Engineering Fair
-                <br>
-                2018: Bronze medal Robotacon
-          
-            </p>
-        </div>
-          
-        
+    <!-- ══════════════════════════════════
+         PUBLICATIONS
+    ═══════════════════════════════════ -->
+    <section id="publications">
+        <h2 class="section-title"><i class="fas fa-book-open icon"></i> Publications</h2>
 
+        <!-- ── 2025 ── -->
+        <div class="year-group">
+            <div class="year-label">2025</div>
 
-    </div>
+            <div class="pub-item">
+                <div class="pub-title">CMATalk: Cross Modality Alignment for Talking Head Generation</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-journal" href="#">
+                        <img src="https://www.google.com/s2/favicons?domain=springer.com" alt="">
+                        Multimedia Tools and Application — Q1
+                    </a>
+                </div>
+            </div>
 
-    <div style="background-color: black; width: 100vw; height: 1px; margin-top: 8px; margin-bottom: 8px;"></div>
-    <footer>
-        <div style="display: flex; justify-content: center;">
-            Copyright 2023
+            <div class="pub-item">
+                <div class="pub-title">PolypDB: A Curated Multi-Center Dataset for Development of AI Algorithms in Colonoscopy</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2409.00045" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        arXiv
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Sing-On-Your-Beat: Simple Text-Controllable Accompaniment Generations</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-arxiv" href="https://arxiv.org/pdf/2411.01661" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        arXiv
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">PRS-MED: Position Reasoning Segmentation in Medical Imaging</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2505.11872" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        arXiv
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">NeIn: Telling What You Don't Want</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-cvpr" href="https://arxiv.org/pdf/2409.06481" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=thecvf.com" alt="">
+                        CVPRW 2025
+                    </a>
+                    <span class="vbadge b-award">
+                        <i class="fas fa-trophy"></i> Best Paper
+                    </span>
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <!-- ── 2024 ── -->
+        <div class="year-group">
+            <div class="year-label">2024</div>
+
+            <div class="pub-item">
+                <div class="pub-title">Validating polyp and instrument segmentation methods in colonoscopy through Medico 2020 and MedAI 2021 Challenges</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-elsevier" href="https://www.sciencedirect.com/science/article/pii/S1361841524002329" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=sciencedirect.com" alt="">
+                        Medical Image Analysis — Q1
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">SAM-EG: Segment Anything Model with Edge Guidance framework for efficient Polyp Segmentation</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-bmvc" href="https://arxiv.org/abs/2406.14819" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=bmva.org" alt="">
+                        BMVC 2024
+                    </a>
+                    <span class="pub-note">Poster</span>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Pose-to-Human (P2H): A pose guidance framework via Gram matrix for Occluded Person Re-identification</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-arxiv" href="#" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        KES 2024
+                    </a>
+                    <span class="pub-note">Oral</span>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">PDGS: Pose-Guided Deep Supervision for Mitigating Clothes-Changing in Person Re-Identification</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-ieee" href="https://arxiv.org/html/2312.05634v3" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
+                        AVSS 2024 — IEEE
+                    </a>
+                    <span class="pub-note">Oral</span>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">KDAS: Knowledge distillation Framework via Attention Supervision for Polyp Segmentation</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-ieee" href="https://arxiv.org/abs/2312.08555" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
+                        ICME 2024 — IEEE
+                    </a>
+                    <span class="pub-note">Oral</span>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Pose Knowledge Distill Guidance: Effective Pose guide learning for Person Re-Identification</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-acm" href="https://dl.acm.org/doi/pdf/10.1145/3643487.3662171" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=acm.org" alt="">
+                        ICMR 2024 — ACM
+                    </a>
+                    <span class="vbadge b-award">
+                        <i class="fas fa-trophy"></i> Best Paper
+                    </span>
+                    <span class="pub-note">Oral</span>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">EAPC: Emotion and Audio Prior Control framework for the emotional and temporal Talking Face Generation</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-arxiv" href="https://www.insticc.org/node/TechnicalProgram/icaart/2024/presentationDetails/124557" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        ICAART 2024
+                    </a>
+                    <span class="pub-note">Oral</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── 2023 ── -->
+        <div class="year-group">
+            <div class="year-label">2023</div>
+
+            <div class="pub-item">
+                <div class="pub-title">ALGNet: Attention Light Graph Memory Network for Medical Recommendation System</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-acm" href="https://dl.acm.org/doi/fullHtml/10.1145/3628797.3628983" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=acm.org" alt="">
+                        SOICT 2023 — ACM
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">SpeechSyncNet: Speech to Talking Landmark via the fusion of prior frame landmark and the audio</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-ieee" href="https://ieeexplore.ieee.org/abstract/document/10402739/" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
+                        VCIP 2023 — IEEE
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">An objective validation of polyp and instrument segmentation methods in colonoscopy through Medico 2020 and MedAI 2021 transparency challenges</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-journal" href="https://arxiv.org/pdf/2307.16262" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=sciencedirect.com" alt="">
+                        Medical Image Analysis — Q1
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Graph for Transformer Feature: A New Approach for Face Anti-Spoofing</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-arxiv" href="https://scholar.google.com/scholar?oi=bibs&cluster=13747788781553684069&btnI=1&hl=en" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        ESANN 2023
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">M2UNet: MetaFormer Multi-scale Upsampling Network for Polyp Segmentation</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-ieee" href="https://eurasip.org/Proceedings/Eusipco/Eusipco2023/pdfs/0001115.pdf" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
+                        EUSIPCO 2023 — IEEE
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Meta-Polyp: a baseline for efficient Polyp segmentation</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-ieee" href="https://www.computer.org/csdl/proceedings-article/cbms/2023/122400a742/1ORgmVyczT2" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
+                        CBMS 2023 — IEEE
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Tiny convolution contextual neural network: a lightweight model for skin lesion detection</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-spie" href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12701/127010U/Tiny-convolution-contextual-neural-network--a-lightweight-model-for/10.1117/12.2679699.short" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=spiedigitallibrary.org" alt="">
+                        ICMV 2022 — SPIE
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">PEFNet: Positional Embedding Feature for Polyp Segmentation</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-springer" href="https://link.springer.com/chapter/10.1007/978-3-031-27818-1_20" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=springer.com" alt="">
+                        MMM 2023 — Springer
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── 2022 ── -->
+        <div class="year-group">
+            <div class="year-label">2022</div>
+
+            <div class="pub-item">
+                <div class="pub-title">Multi Kernel Positional Embedding ConvNeXt for Polyp Segmentation</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-ieee" href="https://ieeexplore.ieee.org/abstract/document/10013883/" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
+                        RIVF 2022 — IEEE
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Ensemble of Deep Neural Networks for Rice Leaf Disease Classification</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-ieee" href="https://ieeexplore.ieee.org/abstract/document/10013858/" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
+                        RIVF 2022 — IEEE
+                    </a>
+                    <span class="vbadge b-award">
+                        <i class="fas fa-trophy"></i> Best Paper
+                    </span>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Res-Dense Net for 3D Covid Chest CT-Scan Classification</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-springer" href="https://link.springer.com/chapter/10.1007/978-3-031-13324-4_41" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=springer.com" alt="">
+                        ICIAP 2022 — Springer
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">EfficientNet for Brain-Lesion Classification — International Workshop BrainLes 2021</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-springer" href="https://link.springer.com/chapter/10.1007/978-3-031-08999-2_20" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=springer.com" alt="">
+                        MICCAI 2022 Workshop — Springer
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── 2021 ── -->
+        <div class="year-group">
+            <div class="year-label">2021</div>
+
+            <div class="pub-item">
+                <div class="pub-title">SHREC 2021: Retrieval of Cultural Heritage Objects</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-elsevier" href="https://www.sciencedirect.com/science/article/pii/S0097849321001412" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=sciencedirect.com" alt="">
+                        Journal Computer &amp; Graphics — Elsevier
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Endoscopy Image Retrieval by Mixer Multi-Layer Perceptron</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-arxiv" href="https://annals-csis.org/Volume_26/drp/pdf/145.pdf" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        Annals of Computer Science 2021
+                    </a>
+                </div>
+            </div>
+
+            <div class="pub-item">
+                <div class="pub-title">Dense-Res Net for Endoscopic Image Classification</div>
+                <div class="pub-meta">
+                    <a class="vbadge b-arxiv" href="https://www.csitcp.net/abstract/11/1111csit08" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        Machine Learning &amp; Trend 2021
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         INDUSTRY EXPERIENCE
+    ═══════════════════════════════════ -->
+    <section id="industry">
+        <h2 class="section-title"><i class="fas fa-briefcase icon"></i> Industry Experience</h2>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Lead Machine Learning Engineer &mdash; <a href="https://www.spexai.com/" target="_blank">Spex A.I GmbH</a>
+                    <span class="exp-period">(Mar 2024 – Present)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Chief of A.I Platform &mdash; <a href="https://www.physicalrobotics.com/" target="_blank">Physical Robotics</a>
+                    <span class="exp-period">(Nov 2024 – Present)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Senior Research Scientist &mdash; <a href="https://cremi.ai/" target="_blank">SongGen</a>
+                    <span class="exp-period">(Mar 2024 – May 2025)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Data Scientist &mdash; <a href="https://vng.com.vn/" target="_blank">VNG Corporation</a>
+                    <span class="exp-period">(2022 – 2024)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Founder &mdash; <a href="https://tivivui95.github.io/aeyes-web/" target="_blank">Aeyes – Smart Glasses for Blind</a>
+                    <span class="exp-period">(2020 – Present)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Software Developer &mdash; Microbox
+                    <span class="exp-period">(2021 – 2022)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>BaoData <span class="exp-period">(2020)</span></h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         ACADEMIC EXPERIENCE
+    ═══════════════════════════════════ -->
+    <section id="academic-exp">
+        <h2 class="section-title"><i class="fas fa-microscope icon"></i> Academic Experience</h2>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Research Intern &mdash; <a href="https://xulabs.github.io/min-xu/" target="_blank">Xu Lab, Carnegie Mellon University</a>
+                    <span class="exp-period">(Jun 2025 – Present)</span></h3>
+                <p>Large Vision Language Models</p>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Research Assistant &mdash; <a href="https://taclab.aalto.fi/" target="_blank">TAC Lab, Aalto University</a>
+                    <span class="exp-period">(Present)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Research Assistant &mdash; <a href="https://www.bagcilab.com/" target="_blank">Bagci Lab, Northwestern University</a>
+                    <span class="exp-period">(Aug 2024 – Present)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Research Intern &mdash; <a href="http://empathiccomputing.org/" target="_blank">Empathic Computing Lab</a>
+                    <span class="exp-period">(2022 – 2023)</span></h3>
+            </div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-dot"></div>
+            <div class="exp-content">
+                <h3>Research Intern &mdash; AIOZ
+                    <span class="exp-period">(2021 – 2022)</span></h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         ACADEMIC SERVICE
+    ═══════════════════════════════════ -->
+    <section id="academic-service">
+        <h2 class="section-title"><i class="fas fa-users icon"></i> Academic Service</h2>
+
+        <p class="service-subsection">Reviewer</p>
+        <div class="service-item">ACM Multimedia 2025 (ACM MM)</div>
+        <div class="service-item">IEEE Transactions on Circuits and Systems for Video Technology — Q1</div>
+        <div class="service-item">International Conference on Computer Vision 2025 (ICCV)</div>
+        <div class="service-item">Conference on Computer Vision and Pattern Recognition (CVPR)</div>
+        <div class="service-item">European Conference on Computer Vision (ECCV)</div>
+        <div class="service-item">IEEE Transactions on Medical Imaging (TMI)</div>
+        <div class="service-item">International Conference on Multimedia and Expo (ICME)</div>
+        <div class="service-item">International Conference on Multimedia Modeling (MMM)</div>
+        <div class="service-item">International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)</div>
+        <div class="service-item">International Joint Conference on Neural Networks (IJCNN)</div>
+        <div class="service-item">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)</div>
+
+        <p class="service-subsection">Mentorship &amp; Outreach</p>
+        <div class="service-item">Partner — VinUni Entrepreneur Lab</div>
+        <div class="service-item">Ambassador — H4TF Hackathon 2023</div>
+        <div class="service-item">Mentor — STEM Petrus Ky / Le Hong Phong</div>
+        <div class="service-item">Technical Mentor — LHPSC</div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         AWARDS
+    ═══════════════════════════════════ -->
+    <section id="awards">
+        <h2 class="section-title"><i class="fas fa-trophy icon"></i> Awards</h2>
+
+        <div class="award-item"><span class="award-year">2024</span>Scholarship awarded by ICME 2024</div>
+        <div class="award-item"><span class="award-year">2024</span>Best Paper Award — AI-SIPM @ ICMR 2024</div>
+        <div class="award-item"><span class="award-year">2023</span>Third Prize — Vietnamese National Invention 2023</div>
+        <div class="award-item"><span class="award-year">2022</span>Second Prize — Vietnamese Invention for Society</div>
+        <div class="award-item"><span class="award-year">2022</span>Excellent Paper Award — ICMV 2022</div>
+        <div class="award-item"><span class="award-year">2022</span>Best Paper Award — RIVF 2022</div>
+        <div class="award-item"><span class="award-year">2022</span>First Prize — Innocity</div>
+        <div class="award-item"><span class="award-year">2022</span>Top 1 — Zoo Hackathon</div>
+        <div class="award-item"><span class="award-year">2021</span>Second Prize — Makethon (no first prize awarded)</div>
+        <div class="award-item"><span class="award-year">2021</span>Second Prize — Software for Student (no first prize awarded)</div>
+        <div class="award-item"><span class="award-year">2021</span>Top 2 Best Project — TensorFlow Community</div>
+        <div class="award-item"><span class="award-year">2021</span>Second Prize — Vietnamese Edtech Startup 2021</div>
+        <div class="award-item"><span class="award-year">2021</span>Top 2 Medical Track — Mediaeval 2021</div>
+        <div class="award-item"><span class="award-year">2021</span>Top 3 — KO Hackathon</div>
+        <div class="award-item"><span class="award-year">2020</span>Top 3 Medical Track — Mediaeval 2020</div>
+        <div class="award-item"><span class="award-year">2020</span>Top 10 / 800 — FGCV 2020 @ CVPR 2020</div>
+        <div class="award-item"><span class="award-year">2020</span>Third Prize — Vietnam National Talent Youth in Computer Science</div>
+        <div class="award-item"><span class="award-year">2019</span>Third Prize — Vietnam National Science and Engineering Fair</div>
+        <div class="award-item"><span class="award-year">2018</span>Bronze Medal — Robotacon</div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         OPEN SOURCE
+    ═══════════════════════════════════ -->
+    <section id="opensource">
+        <h2 class="section-title"><i class="fab fa-github icon"></i> Open Source</h2>
+
+        <a class="repo-card" href="https://github.com/SongGen-AI/LLambada" target="_blank">
+            <div class="repo-card-icon"><i class="fab fa-github"></i></div>
+            <div class="repo-card-body">
+                <h3>SongGen-AI / LLambada</h3>
+                <p>Open-source music generation project.</p>
+            </div>
+        </a>
+    </section>
+
+</main>
+
+<footer>
+    &copy; 2025 Quoc-Huy Trinh
+</footer>
 
 </body>
-</html> 
-
-<style>
-
-table, th, td {
-  border:1px solid black;
-}
-
-
-</style>
+</html>
