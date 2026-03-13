@@ -520,6 +520,15 @@
             color: var(--text-light);
         }
 
+        /* ── WAVE ANIMATION ── */
+        @keyframes wave {
+            0%,100% { transform: rotate(0deg); }
+            20%      { transform: rotate(20deg); }
+            40%      { transform: rotate(-8deg); }
+            60%      { transform: rotate(16deg); }
+            80%      { transform: rotate(-4deg); }
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 680px) {
             .about-grid { grid-template-columns: 1fr; }
@@ -585,20 +594,16 @@
 
             <!-- bio -->
             <div class="about-bio">
-                <h2>Quoc-Huy Trinh</h2>
-                <p class="subtitle">Deep Generative Model &nbsp;·&nbsp; Computer Vision &nbsp;·&nbsp; Medical Imaging &nbsp;·&nbsp; Music Generation</p>
+                <h2><i class="fas fa-user-astronaut" style="font-size:0.85em;color:#9ca3af;margin-right:0.45rem;"></i>Quoc-Huy Trinh</h2>
+                <p class="subtitle">Deep Generative Model &nbsp;·&nbsp; Computer Vision &nbsp;·&nbsp; NLP &nbsp;·&nbsp; Medical Imaging</p>
                 <p>
-                    Hi, I am Huy, a Vietnamese researcher currently pursuing a Master's in Computer Science at Aalto University (GPA: 4.82/5).
+                    Hi <span style="display:inline-block;animation:wave 1.8s ease-in-out infinite;transform-origin:70% 70%;">👋</span>, I'm Huy — a Vietnamese researcher and incoming Ph.D. candidate in Electrical Engineering at Northwestern University and a Master's student in Computer Science at Aalto University. I'm passionate about exploring new ideas at the frontier of deep learning and computer vision, and I love building things just to see how they work. Outside of research, I enjoy reading, soccer, music, and films.
+                    <br><br>
                     My research is supervised by Prof. Minh-Triet Tran, Prof. Ulas Bagci, Prof. Sebastian Szyller, Prof. Bo Zhao, Dr. Debesh Jha, and Msc. Hai-Dang Nguyen.
-                </p>
-                <p>
-                    I am also a Research Assistant at <a href="https://www.bagcilab.com/" target="_blank" style="color:var(--primary)">Bagci Lab (Northwestern University)</a>,
-                    a Visiting Researcher collaborating with Prof. <a href="https://xulabs.github.io/min-xu/" target="_blank" style="color:var(--primary)">Min Xu at CMU</a>,
-                    and a Lead Machine Learning Engineer at <a href="https://www.spexai.com/" target="_blank" style="color:var(--primary)">Spex A.I GmbH</a>.
                 </p>
 
                 <div class="research-interests">
-                    <h3>Research Interests</h3>
+                    <h3><i class="fas fa-microscope" style="color:#9ca3af;margin-right:0.4rem;font-size:0.85em;"></i>Research Interests</h3>
                     <div class="interest-tags">
                         <span class="interest-tag">Deep Generative Model</span>
                         <span class="interest-tag">Computer Vision</span>
@@ -1041,7 +1046,7 @@
             <div class="exp-dot"></div>
             <div class="exp-content">
                 <h3>Lead Machine Learning Engineer &mdash; <a href="https://www.spexai.com/" target="_blank">Spex A.I GmbH</a>
-                    <span class="exp-period">(Mar 2024 – Present)</span></h3>
+                    <span class="exp-period">(Mar 2024 – May 2026)</span></h3>
             </div>
         </div>
 
