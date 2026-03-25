@@ -303,24 +303,81 @@
             margin-bottom: 0.1rem;
         }
 
-        /* ── PUBLICATIONS ── */
-        .year-group { margin-bottom: 1.8rem; }
+        /* ── PUBLICATIONS TIMELINE ── */
+        .pub-timeline {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .pub-timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), rgba(25,0,255,0.15) 95%, transparent);
+            border-radius: 2px;
+        }
+
+        .year-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .year-group:last-child { margin-bottom: 0; }
 
         .year-label {
+            position: relative;
             font-size: 1.05rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.7rem;
             padding-bottom: 0.35rem;
-            border-bottom: 2px solid rgba(25,0,255,0.12);
+        }
+
+        .year-label::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px var(--primary);
+            z-index: 1;
         }
 
         .pub-item {
+            position: relative;
             padding: 0.8rem 0;
             border-bottom: 1px solid var(--bg-alt);
         }
 
         .pub-item:last-child { border-bottom: none; }
+
+        .pub-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 1.15rem;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid var(--primary);
+            box-sizing: border-box;
+            z-index: 1;
+            transition: all 0.15s ease;
+        }
+
+        .pub-item:hover::before {
+            background: var(--primary);
+            transform: scale(1.25);
+        }
 
         .pub-title {
             font-size: 0.9rem;
@@ -561,6 +618,10 @@
             .social-links { flex-direction: row; flex-wrap: wrap; }
             .social-link { flex: 1 1 120px; }
             .nav-links { display: none; }
+            .pub-timeline { padding-left: 22px; }
+            .pub-timeline::before { left: 6px; }
+            .pub-item::before { left: -19px; width: 7px; height: 7px; }
+            .year-label::before { left: -20px; width: 12px; height: 12px; }
         }
     </style>
 </head>
@@ -722,6 +783,7 @@
     <section id="publications">
         <h2 class="section-title"><i class="fas fa-book-open icon"></i> Publications</h2>
 
+        <div class="pub-timeline">
         <!-- ── 2026 ── -->
         <div class="year-group">
             <div class="year-label">2026</div>
@@ -756,7 +818,7 @@
                 </div>
             </div>
             <div class="pub-item">
-                <div class="pub-title">Efficient Vision-Language Understanding with Cross-Modality Modulation</div>
+                <div class="pub-title">Firebolt-VL: Efficient Vision-Language Understanding with Cross-Modality Modulation</div>
                 <div class="pub-authors"><span class="me-first">Quoc-Huy Trinh</span>, Mustapha Abdullahi, Bo Zhao, Debesh Jha</div>
                 <div class="pub-meta">
                     <a class="vbadge b-cvpr" href="https://fireboltvl.github.io/" target="_blank">
@@ -1092,6 +1154,7 @@
                     </a>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
