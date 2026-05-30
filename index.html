@@ -233,6 +233,36 @@
             gap: 0.5rem;
         }
 
+        /* ── NEWS ── */
+        .news-item {
+            display: flex;
+            gap: 0.9rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--bg-alt);
+            align-items: baseline;
+            font-size: 0.88rem;
+        }
+
+        .news-item:last-child { border-bottom: none; }
+
+        .news-date {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--primary);
+            min-width: 72px;
+            flex-shrink: 0;
+        }
+
+        .news-item a { color: var(--primary); text-decoration: none; }
+        .news-item a:hover { text-decoration: underline; }
+
+        .news-badges {
+            margin-top: 0.4rem;
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
         /* ── EDUCATION ── */
         .edu-item {
             display: flex;
@@ -288,6 +318,8 @@
         .edu-details .edu-major { font-weight: 500; color: var(--text); }
         .edu-details .edu-minor { color: var(--text-light); }
         .edu-details .edu-gpa   { color: var(--text-light); }
+        .edu-details .edu-thesis { color: var(--text); margin-top: 0.1rem; }
+        .edu-details .edu-thesis em { color: var(--text-light); font-style: italic; }
 
         .edu-supervisor {
             text-align: right;
@@ -536,6 +568,12 @@
         }
 
         /* ── AWARDS ── */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 1.75rem;
+        }
+
         .award-item {
             display: flex;
             gap: 0.9rem;
@@ -618,6 +656,7 @@
             .social-links { flex-direction: row; flex-wrap: wrap; }
             .social-link { flex: 1 1 120px; }
             .nav-links { display: none; }
+            .awards-grid { grid-template-columns: 1fr; }
             .pub-timeline { padding-left: 22px; }
             .pub-timeline::before { left: 6px; }
             .pub-item::before { left: -19px; width: 7px; height: 7px; }
@@ -637,8 +676,9 @@
     </a>
     <ul class="nav-links">
         <li><a href="#about">About</a></li>
+        <li><a href="#news">News</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#publications">Publications</a></li>
+        <li><a href="#publications">Selected Publications</a></li>
         <li><a href="#industry">Industry</a></li>
         <li><a href="#academic-exp">Academic Exp.</a></li>
         <li><a href="#academic-service">Service</a></li>
@@ -657,7 +697,7 @@
 
             <!-- photo + social -->
             <div class="about-photo-col">
-                <img class="profile-photo" src="./huy.jpg" alt="Quoc-Huy Trinh">
+                <img class="profile-photo" src="./huy1.jpg" alt="Quoc-Huy Trinh">
                 <div class="social-links">
                     <a class="social-link" href="https://www.linkedin.com/in/huy-quoc-450459161/" target="_blank">
                         <i class="fab fa-linkedin"></i> LinkedIn
@@ -679,10 +719,12 @@
 
             <!-- bio -->
             <div class="about-bio">
-                <h2><i class="fas fa-user-astronaut" style="font-size:0.85em;color:#9ca3af;margin-right:0.45rem;"></i>Quoc-Huy Trinh</h2>
+                <h2>Quoc-Huy Trinh</h2>
                 <p class="subtitle">Deep Generative Model &nbsp;·&nbsp; Computer Vision &nbsp;·&nbsp; NLP &nbsp;·&nbsp; Multimodal</p>
                 <p>
                     Hi <span style="display:inline-block;animation:wave 1.8s ease-in-out infinite;transform-origin:70% 70%;">👋</span>, I'm Huy — a Vietnamese researcher and a Master's student in Computer Science at Aalto University. I'm passionate about exploring new ideas at the frontier of deep learning and computer vision, and I love building things just to see how they work. Outside of research, I enjoy reading, soccer, music, and films.
+                    <br><br>
+                    On the industry side, I was a Lead Machine Learning Engineer at SpexAI GmbH (acquired by Nynomic AG), where I led the development and delivery of an AI analysis system for plants. Before that, as a Data Scientist at VNG Corporation, I built a FaceID system and led its Face Security feature, and also developed license plate detection &amp; recognition and multi-object tracking for surveillance cameras.
                     <br><br>
                     My research is supervised by Prof. Minh-Triet Tran, Prof. Ulas Bagci, Prof. Sebastian Szyller, Prof. Bo Zhao, Dr. Debesh Jha, and Msc. Hai-Dang Nguyen.
                 </p>
@@ -704,6 +746,37 @@
     </section>
 
     <!-- ══════════════════════════════════
+         NEWS
+    ═══════════════════════════════════ -->
+    <section id="news">
+        <h2 class="section-title"><i class="fas fa-bullhorn icon"></i> News</h2>
+
+        <div class="news-item">
+            <span class="news-date">Jun 2026</span>
+            <div>
+                🎉 Huy will present <strong>PRS-MED</strong> and <strong>Firebolt-VL</strong> at the <strong>CVPR Workshop 2026</strong>.
+            </div>
+        </div>
+
+        <div class="news-item">
+            <span class="news-date">Mar 2026</span>
+            <div>
+                New preprint: <strong>Beyond Medical Diagnostics: How Medical Multimodal Large Language Models Think in Space</strong>.
+                <div class="news-badges">
+                    <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2603.13800" target="_blank">
+                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
+                        arXiv
+                    </a>
+                    <a class="vbadge b-web" href="https://huyquoctrinh.github.io/SpatialMed/" target="_blank">
+                        <i class="fas fa-globe"></i>
+                        Webpage
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
          EDUCATION
     ═══════════════════════════════════ -->
     <section id="education">
@@ -720,7 +793,8 @@
                     <div class="edu-details">
                         <span class="edu-major">M.Sc. &nbsp;·&nbsp; Major: Computer Science</span>
                         <span class="edu-minor">Minor: Machine Learning, Data Science and Artificial Intelligence</span>
-                        <span class="edu-gpa">GPA: 4.82 / 5</span>
+                        <span class="edu-gpa">GPA: 4.82 / 5 &nbsp;·&nbsp; Top 5%</span>
+                        <span class="edu-thesis"><em>Thesis:</em> In-Context Attribution for Large Language Model</span>
                     </div>
                 </div>
                 <div class="edu-supervisor">
@@ -738,7 +812,8 @@
                     <h3>University of Science, VNU-HCM, Vietnam</h3>
                     <div class="edu-details">
                         <span class="edu-major">B.Sc. (Honor Program) &nbsp;·&nbsp; Major: Information Technology</span>
-                        <span class="edu-gpa">GPA: 3.58 / 4.0 </span>
+                        <span class="edu-gpa">GPA: 3.58 / 4.0 &nbsp;·&nbsp; Top 15%</span>
+                        <span class="edu-thesis"><em>Thesis:</em> Pose Knowledge Guidance for Person Re-Identification</span>
                     </div>
                 </div>
                 <div class="edu-supervisor">
@@ -763,27 +838,12 @@
          PUBLICATIONS
     ═══════════════════════════════════ -->
     <section id="publications">
-        <h2 class="section-title"><i class="fas fa-book-open icon"></i> Publications</h2>
+        <h2 class="section-title"><i class="fas fa-book-open icon"></i> Selected Publications</h2>
 
         <div class="pub-timeline">
         <!-- ── 2026 ── -->
         <div class="year-group">
             <div class="year-label">2026</div>
-
-            <div class="pub-item">
-                <div class="pub-title">Beyond Medical Diagnostics: How Medical Multimodal Large Language Models Think in Space</div>
-                <div class="pub-authors"><span class="me-first">Quoc-Huy Trinh</span>, Xi Ding, Yang Liu, Zhenyue Qin, Xingjian Li, Gorkem Durak, Halil Ertugrul Aktas, Elif Keles, Ulas Bagci*, Min Xu*</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2603.13800" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
-                        arXiv
-                    </a>
-                    <a class="vbadge b-web" href="https://huyquoctrinh.github.io/SpatialMed/" target="_blank">
-                        <i class="fas fa-globe"></i>
-                        Webpage
-                    </a>
-                </div>
-            </div>
 
             <div class="pub-item">
                 <div class="pub-title">PRS-MED: Position Reasoning Segmentation in Medical Imaging</div>
@@ -826,32 +886,6 @@
                     <a class="vbadge b-journal" href="#">
                         <img src="https://www.google.com/s2/favicons?domain=springer.com" alt="">
                         Multimedia Tools and Application — Q1
-                    </a>
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">PolypDB: A Curated Multi-Center Dataset for Development of AI Algorithms in Colonoscopy</div>
-                <div class="pub-authors">Debesh Jha, Nikhil Kumar Tomar, Vanshali Sharma, <span class="me">Quoc-Huy Trinh</span>, Koushik Biswas, Hongyi Pan, et al.</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2409.00045" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
-                        arXiv
-                    </a>
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Sing-On-Your-Beat: Simple Text-Controllable Accompaniment Generations</div>
-                <div class="pub-authors"><span class="me-first">Quoc-Huy Trinh</span>, Minh-Van Nguyen, Trong-Hieu Nguyen Mau, Khoa Tran, Thanh Do</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-arxiv" href="https://arxiv.org/pdf/2411.01661" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
-                        arXiv
-                    </a>
-                    <a class="vbadge b-web" href="https://songgen-ai.github.io/llambada-demo/" target="_blank">
-                        <i class="fas fa-globe"></i>
-                        Webpage
                     </a>
                 </div>
             </div>
@@ -903,18 +937,6 @@
             </div>
 
             <div class="pub-item">
-                <div class="pub-title">Pose-to-Human (P2H): A pose guidance framework via Gram matrix for Occluded Person Re-identification</div>
-                <div class="pub-authors"><span class="me-first">Quoc-Huy Trinh</span>, Phuoc-Thao Vo Thi, Minh-Triet Tran, Hai-Dang Nguyen</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-arxiv" href="#" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
-                        KES 2024
-                    </a>
-                    <span class="pub-note">Oral</span>
-                </div>
-            </div>
-
-            <div class="pub-item">
                 <div class="pub-title">PDGS: Pose-Guided Deep Supervision for Mitigating Clothes-Changing in Person Re-Identification</div>
                 <div class="pub-authors"><span class="me-first">Quoc-Huy Trinh</span>, Nhat-Tan Bui, Dinh-Hieu Hoang, Phuoc-Thao Vo Thi, Hai-Dang Nguyen, Debesh Jha, Ulas Bagci, Ngan Le, Minh-Triet Tran</div>
                 <div class="pub-meta">
@@ -952,34 +974,11 @@
                     <span class="pub-note">Oral</span>
                 </div>
             </div>
-
-            <div class="pub-item">
-                <div class="pub-title">EAPC: Emotion and Audio Prior Control framework for the emotional and temporal Talking Face Generation</div>
-                <div class="pub-authors">Xuan-Nam Cao, <span class="me">Quoc-Huy Trinh</span>, Quoc-Anh Do-Nguyen, Van-Son Ho, Hoai-Thuong Dang, Minh-Triet Tran</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-arxiv" href="https://www.insticc.org/node/TechnicalProgram/icaart/2024/presentationDetails/124557" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
-                        ICAART 2024
-                    </a>
-                    <span class="pub-note">Oral</span>
-                </div>
-            </div>
         </div>
 
         <!-- ── 2023 ── -->
         <div class="year-group">
             <div class="year-label">2023</div>
-
-            <div class="pub-item">
-                <div class="pub-title">ALGNet: Attention Light Graph Memory Network for Medical Recommendation System</div>
-                <div class="pub-authors">Minh-Van Nguyen, Duy-Thinh Nguyen, <span class="me">Quoc-Huy Trinh</span>, Bac-Hoai Le</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-acm" href="https://dl.acm.org/doi/fullHtml/10.1145/3628797.3628983" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=acm.org" alt="">
-                        SOICT 2023 — ACM
-                    </a>
-                </div>
-            </div>
 
             <div class="pub-item">
                 <div class="pub-title">SpeechSyncNet: Speech to Talking Landmark via the fusion of prior frame landmark and the audio</div>
@@ -1037,17 +1036,6 @@
             </div>
 
             <div class="pub-item">
-                <div class="pub-title">Tiny convolution contextual neural network: a lightweight model for skin lesion detection</div>
-                <div class="pub-authors"><span class="me-first">Quoc-Huy Trinh</span>, Trong-Hieu Nguyen Mau, Phuoc-Thao Vo Thi, et al.</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-spie" href="https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12701/127010U/Tiny-convolution-contextual-neural-network--a-lightweight-model-for/10.1117/12.2679699.short" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=spiedigitallibrary.org" alt="">
-                        ICMV 2022 — SPIE
-                    </a>
-                </div>
-            </div>
-
-            <div class="pub-item">
                 <div class="pub-title">PEFNet: Positional Embedding Feature for Polyp Segmentation</div>
                 <div class="pub-authors">Trong-Hieu Nguyen-Mau, <span class="me">Quoc-Huy Trinh</span>, Nhat-Tan Bui, Phuoc-Thao Vo Thi, Minh-Van Nguyen, Xuan-Nam Cao, Minh-Triet Tran, Hai-Dang Nguyen</div>
                 <div class="pub-meta">
@@ -1062,42 +1050,6 @@
         <!-- ── 2022 ── -->
         <div class="year-group">
             <div class="year-label">2022</div>
-
-            <div class="pub-item">
-                <div class="pub-title">Multi Kernel Positional Embedding ConvNeXt for Polyp Segmentation</div>
-                <div class="pub-authors">Trong-Hieu Nguyen-Mau, <span class="me">Quoc-Huy Trinh</span>, Nhat-Tan Bui, Minh-Triet Tran, Hai-Dang Nguyen</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-ieee" href="https://ieeexplore.ieee.org/abstract/document/10013883/" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
-                        RIVF 2022 — IEEE
-                    </a>
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Ensemble of Deep Neural Networks for Rice Leaf Disease Classification</div>
-                <div class="pub-authors">Son Van Ho, Huy Gia Vuong, Binh Quang Nguyen, <span class="me">Quoc-Huy Trinh</span>, Minh-Triet Tran</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-ieee" href="https://ieeexplore.ieee.org/abstract/document/10013858/" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=ieee.org" alt="">
-                        RIVF 2022 — IEEE
-                    </a>
-                    <span class="vbadge b-award">
-                        <i class="fas fa-trophy"></i> Best Paper
-                    </span>
-                </div>
-            </div>
-
-            <div class="pub-item">
-                <div class="pub-title">Res-Dense Net for 3D Covid Chest CT-Scan Classification</div>
-                <div class="pub-authors"><span class="me-first">Quoc-Huy Trinh</span>, Minh-Van Nguyen, Thien-Phuc Nguyen Dinh</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-springer" href="https://link.springer.com/chapter/10.1007/978-3-031-13324-4_41" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=springer.com" alt="">
-                        ICIAP 2022 — Springer
-                    </a>
-                </div>
-            </div>
 
             <div class="pub-item">
                 <div class="pub-title">EfficientNet for Brain-Lesion Classification — International Workshop BrainLes 2021</div>
@@ -1126,16 +1078,6 @@
                 </div>
             </div>
 
-            <div class="pub-item">
-                <div class="pub-title">Endoscopy Image Retrieval by Mixer Multi-Layer Perceptron</div>
-                <div class="pub-authors"><span class="me-first">Quoc-Huy Trinh</span>, Minh-Van Nguyen</div>
-                <div class="pub-meta">
-                    <a class="vbadge b-arxiv" href="https://annals-csis.org/Volume_26/drp/pdf/145.pdf" target="_blank">
-                        <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt="">
-                        Annals of Computer Science 2021
-                    </a>
-                </div>
-            </div>
         </div>
         </div>
     </section>
@@ -1213,7 +1155,7 @@
             <div class="exp-content">
                 <h3>Research Intern &mdash; <a href="https://xulabs.github.io/min-xu/" target="_blank">Xu Lab, Carnegie Mellon University</a>
                     <span class="exp-period">(Jun 2025 – Present)</span></h3>
-                <p>Large Vision Language Models</p>
+                <p>Investigating the spatial reasoning of 3D multimodal LLMs over volumetric medical data (SpatialMed).</p>
             </div>
         </div>
 
@@ -1222,7 +1164,7 @@
             <div class="exp-content">
                 <h3>Research Assistant &mdash; <a href="https://taclab.aalto.fi/" target="_blank">TAC Lab, Aalto University</a>
                     <span class="exp-period">(Present)</span></h3>
-                <p>Trustworthiness and reliability of Large Language Models</p>
+                <p>Exploring in-context attribution and how it interacts with the knowledge stored in a model's in-weight data.</p>
             </div>
         </div>
 
@@ -1231,6 +1173,7 @@
             <div class="exp-content">
                 <h3>Research Assistant &mdash; <a href="https://www.bagcilab.com/" target="_blank">Bagci Lab, Northwestern University</a>
                     <span class="exp-period">(Aug 2024 – Present)</span></h3>
+                <p>Studying knowledge distillation for efficient medical image segmentation (SAM-EG), and the grounding and position-reasoning capabilities of multimodal LLMs (PRS-MED).</p>
             </div>
         </div>
 
@@ -1239,6 +1182,7 @@
             <div class="exp-content">
                 <h3>Research Intern &mdash; <a href="http://empathiccomputing.org/" target="_blank">Empathic Computing Lab</a>
                     <span class="exp-period">(2022 – 2023)</span></h3>
+                <p>Performed multimodal analysis of EEG signals to study human cognition.</p>
             </div>
         </div>
 
@@ -1257,24 +1201,11 @@
     <section id="academic-service">
         <h2 class="section-title"><i class="fas fa-users icon"></i> Academic Service</h2>
 
-        <p class="service-subsection">Reviewer</p>
-        <div class="service-item">ACM Multimedia 2025 (ACM MM)</div>
-        <div class="service-item">IEEE Transactions on Circuits and Systems for Video Technology — Q1</div>
-        <div class="service-item">International Conference on Computer Vision 2025 (ICCV)</div>
-        <div class="service-item">Conference on Computer Vision and Pattern Recognition (CVPR)</div>
-        <div class="service-item">European Conference on Computer Vision (ECCV)</div>
-        <div class="service-item">IEEE Transactions on Medical Imaging (TMI)</div>
-        <div class="service-item">International Conference on Multimedia and Expo (ICME)</div>
-        <div class="service-item">International Conference on Multimedia Modeling (MMM)</div>
-        <div class="service-item">International Conference on Medical Image Computing and Computer-Assisted Intervention (MICCAI)</div>
-        <div class="service-item">International Joint Conference on Neural Networks (IJCNN)</div>
-        <div class="service-item">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)</div>
+        <p class="service-subsection">Conference Reviewer</p>
+        <div class="service-item">NeurIPS, CVPR, ICCV, ECCV, WACV, MICCAI, ACM MM, ICME, MMM, IJCNN</div>
 
-        <p class="service-subsection">Mentorship &amp; Outreach</p>
-        <div class="service-item">Partner — VinUni Entrepreneur Lab</div>
-        <div class="service-item">Ambassador — H4TF Hackathon 2023</div>
-        <div class="service-item">Mentor — STEM Petrus Ky / Le Hong Phong</div>
-        <div class="service-item">Technical Mentor — LHPSC</div>
+        <p class="service-subsection">Journal Reviewer</p>
+        <div class="service-item">TMI, TCSVT</div>
     </section>
 
     <!-- ══════════════════════════════════
@@ -1283,6 +1214,7 @@
     <section id="awards">
         <h2 class="section-title"><i class="fas fa-trophy icon"></i> Awards</h2>
 
+        <div class="awards-grid">
         <div class="award-item"><span class="award-year">2024</span>Scholarship awarded by ICME 2024</div>
         <div class="award-item"><span class="award-year">2024</span>Best Paper Award — AI-SIPM @ ICMR 2024</div>
         <div class="award-item"><span class="award-year">2023</span>Third Prize — Vietnamese National Invention 2023</div>
@@ -1298,10 +1230,10 @@
         <div class="award-item"><span class="award-year">2021</span>Top 2 Medical Track — Mediaeval 2021</div>
         <div class="award-item"><span class="award-year">2021</span>Top 3 — KO Hackathon</div>
         <div class="award-item"><span class="award-year">2020</span>Top 3 Medical Track — Mediaeval 2020</div>
-        <div class="award-item"><span class="award-year">2020</span>Top 10 / 800 — FGCV 2020 @ CVPR 2020</div>
         <div class="award-item"><span class="award-year">2020</span>Third Prize — Vietnam National Talent Youth in Computer Science</div>
         <div class="award-item"><span class="award-year">2019</span>Third Prize — Vietnam National Science and Engineering Fair</div>
         <div class="award-item"><span class="award-year">2018</span>Bronze Medal — Robotacon</div>
+        </div>
     </section>
 
     <!-- ══════════════════════════════════
