@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Works — Quoc-Huy Trinh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/free-h-character-alphabet-letter-32852.png">
+</head>
+<body>
+
+<!-- ════════════════════════════════════════
+     NAVIGATION
+═════════════════════════════════════════ -->
+<nav>
+    <a href="index.html" class="nav-brand">
+        <i class="fa fa-code"></i>
+        Quoc-Huy Trinh
+    </a>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="works.html" class="active">Works</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+
+<main>
+
+    <div class="page-head">
+        <a class="back-link" href="index.html"><i class="fas fa-arrow-left"></i> Back to home</a>
+        <h1><i class="fas fa-cubes"></i> Works</h1>
+        <p>
+            Project pages, models, and datasets I have released. Everything on Hugging Face lives under
+            <a href="https://huggingface.co/huyquoctrinh" target="_blank" style="color:var(--primary);text-decoration:none;font-weight:600;">🤗 huggingface.co/huyquoctrinh</a>.
+        </p>
+    </div>
+
+    <!-- ══════════════════════════════════
+         FEATURED PROJECTS
+    ═══════════════════════════════════ -->
+    <section id="projects">
+        <h2 class="section-title"><i class="fas fa-star icon"></i> Featured Projects</h2>
+
+        <!-- PRS-Med -->
+        <div class="work-card t-prsmed">
+            <div class="work-head">
+                <div class="work-icon"><i class="fas fa-crosshairs"></i></div>
+                <div class="work-titles">
+                    <h3>PRS-Med</h3>
+                    <span class="work-venue">CVPRW 2026</span>
+                </div>
+            </div>
+            <div class="work-sub">Position Reasoning Segmentation in Medical Imaging</div>
+            <p class="work-desc">
+                A vision-language framework that couples segmentation with spatial reasoning, so a medical
+                model can both localise a structure and explain <em>where</em> it sits relative to the anatomy
+                around it. Released with a 116k-sample position-reasoning corpus.
+            </p>
+            <div class="work-links">
+                <a class="vbadge b-web" href="https://huyquoctrinh.github.io/prsmed/" target="_blank">
+                    <i class="fas fa-globe"></i> Project page
+                </a>
+                <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2505.11872" target="_blank">
+                    <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt=""> arXiv
+                </a>
+                <a class="vbadge b-code" href="https://github.com/huyquoctrinh/PRS-Med" target="_blank">
+                    <i class="fab fa-github"></i> Code
+                </a>
+                <a class="vbadge b-hf" href="https://huggingface.co/datasets/huyquoctrinh/PRS-Med" target="_blank">
+                    🤗 Dataset · 116k
+                </a>
+                <a class="vbadge b-hf" href="https://huggingface.co/datasets/huyquoctrinh/PRS-Med-image" target="_blank">
+                    🤗 Images
+                </a>
+            </div>
+        </div>
+
+        <!-- Firebolt-VL -->
+        <div class="work-card t-firebolt">
+            <div class="work-head">
+                <div class="work-icon"><i class="fas fa-bolt"></i></div>
+                <div class="work-titles">
+                    <h3>Firebolt-VL</h3>
+                    <span class="work-venue">CVPRW 2026</span>
+                </div>
+            </div>
+            <div class="work-sub">Efficient Vision-Language Understanding with Cross-Modality Modulation</div>
+            <p class="work-desc">
+                A small, fast vision-language model that modulates visual features with language before fusion,
+                keeping multimodal understanding strong at a fraction of the usual parameter budget.
+            </p>
+            <div class="work-links">
+                <a class="vbadge b-web" href="https://fireboltvl.github.io/" target="_blank">
+                    <i class="fas fa-globe"></i> Project page
+                </a>
+                <a class="vbadge b-hf" href="https://huggingface.co/huyquoctrinh/FireboltVL" target="_blank">
+                    🤗 FireboltVL · 0.7B
+                </a>
+                <a class="vbadge b-hf" href="https://huggingface.co/huyquoctrinh/FireboltVL-1.5" target="_blank">
+                    🤗 FireboltVL-1.5
+                </a>
+            </div>
+        </div>
+
+        <!-- SpatialMed -->
+        <div class="work-card t-spatial">
+            <div class="work-head">
+                <div class="work-icon"><i class="fas fa-cube"></i></div>
+                <div class="work-titles">
+                    <h3>SpatialMed</h3>
+                    <span class="work-venue">ECCVW 2026</span>
+                </div>
+            </div>
+            <div class="work-sub">Beyond Medical Diagnostics: How Medical Multimodal Large Language Models Think in Space</div>
+            <p class="work-desc">
+                A benchmark and study of how medical MLLMs reason about 3D space — distance, orientation, and
+                relative position across volumetric scans — rather than only about diagnosis.
+            </p>
+            <div class="work-links">
+                <a class="vbadge b-web" href="https://huyquoctrinh.github.io/SpatialMed/" target="_blank">
+                    <i class="fas fa-globe"></i> Project page
+                </a>
+                <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2603.13800" target="_blank">
+                    <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt=""> arXiv
+                </a>
+                <a class="vbadge b-hf" href="https://huggingface.co/datasets/huyquoctrinh/SpatialMed" target="_blank">
+                    🤗 Dataset · 13.6k
+                </a>
+            </div>
+        </div>
+
+        <!-- Rad-JEPA 3D -->
+        <div class="work-card t-radjepa">
+            <div class="work-head">
+                <div class="work-icon"><i class="fas fa-x-ray"></i></div>
+                <div class="work-titles">
+                    <h3>Rad-JEPA 3D</h3>
+                    <span class="work-venue">Preprint 2026</span>
+                </div>
+            </div>
+            <div class="work-sub">Radiology Joint-Embedding Predictive Model for 3D Computed Tomography</div>
+            <p class="work-desc">
+                A self-supervised joint-embedding predictive encoder trained directly on volumetric CT, giving
+                a general-purpose 3D radiology representation for downstream diagnostic tasks.
+            </p>
+            <div class="work-links">
+                <a class="vbadge b-hf" href="https://huggingface.co/huyquoctrinh/Rad-Jepa-3D" target="_blank">
+                    🤗 Model
+                </a>
+            </div>
+        </div>
+
+        <!-- Context attribution -->
+        <div class="work-card t-attrib">
+            <div class="work-head">
+                <div class="work-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                <div class="work-titles">
+                    <h3>Context Attribution &amp; WMDP++</h3>
+                    <span class="work-venue">Preprint 2026</span>
+                </div>
+            </div>
+            <div class="work-sub">How Context Attribution Handles What the Model Already Knows</div>
+            <p class="work-desc">
+                Studying what happens to context-attribution methods when the retrieved context overlaps with
+                knowledge the model already stores in its weights, together with the WMDP++ evaluation set and
+                the fine-tuned probe model used in the analysis.
+            </p>
+            <div class="work-links">
+                <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2607.23804" target="_blank">
+                    <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt=""> arXiv
+                </a>
+                <a class="vbadge b-hf" href="https://huggingface.co/datasets/huyquoctrinh/WMDPplusplus" target="_blank">
+                    🤗 WMDP++ dataset
+                </a>
+            </div>
+        </div>
+
+        <!-- LLambada -->
+        <div class="work-card t-music">
+            <div class="work-head">
+                <div class="work-icon"><i class="fas fa-music"></i></div>
+                <div class="work-titles">
+                    <h3>LLambada</h3>
+                    <span class="work-venue">Open source</span>
+                </div>
+            </div>
+            <div class="work-sub">Text-controllable music &amp; accompaniment generation</div>
+            <p class="work-desc">
+                Open-source music generation stack built at SongGen, alongside the
+                <em>Sing-On-Your-Beat</em> work on simple text-controllable accompaniment generation.
+            </p>
+            <div class="work-links">
+                <a class="vbadge b-code" href="https://github.com/SongGen-AI/LLambada" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a class="vbadge b-arxiv" href="https://arxiv.org/abs/2411.01661" target="_blank">
+                    <img src="https://www.google.com/s2/favicons?domain=arxiv.org" alt=""> arXiv
+                </a>
+                <a class="vbadge b-hf" href="https://huggingface.co/huyquoctrinh/musicgen-melody-lora-punk" target="_blank">
+                    🤗 Model
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         HUGGING FACE — MODELS
+    ═══════════════════════════════════ -->
+    <section id="hf-models">
+        <h2 class="section-title"><span class="icon">🤗</span> Models on Hugging Face</h2>
+
+        <a class="hf-row" href="https://huggingface.co/huyquoctrinh/Rad-Jepa-3D" target="_blank">
+            <span class="hf-emoji">🧠</span>
+            <span class="hf-name">huyquoctrinh/Rad-Jepa-3D</span>
+            <span class="hf-desc">Image feature extraction · 3D CT</span>
+        </a>
+        <a class="hf-row" href="https://huggingface.co/huyquoctrinh/FireboltVL" target="_blank">
+            <span class="hf-emoji">⚡</span>
+            <span class="hf-name">huyquoctrinh/FireboltVL</span>
+            <span class="hf-desc">Vision-language · 0.7B</span>
+        </a>
+        <a class="hf-row" href="https://huggingface.co/huyquoctrinh/FireboltVL-1.5" target="_blank">
+            <span class="hf-emoji">⚡</span>
+            <span class="hf-name">huyquoctrinh/FireboltVL-1.5</span>
+            <span class="hf-desc">Vision-language</span>
+        </a>
+        <a class="hf-row" href="https://huggingface.co/huyquoctrinh/musicgen-melody-lora-punk" target="_blank">
+            <span class="hf-emoji">🎵</span>
+            <span class="hf-name">huyquoctrinh/musicgen-melody-lora-punk</span>
+            <span class="hf-desc">LLambada · text-to-audio</span>
+        </a>
+    </section>
+
+    <!-- ══════════════════════════════════
+         HUGGING FACE — DATASETS
+    ═══════════════════════════════════ -->
+    <section id="hf-datasets">
+        <h2 class="section-title"><span class="icon">🗂️</span> Datasets on Hugging Face</h2>
+
+        <a class="hf-row" href="https://huggingface.co/datasets/huyquoctrinh/PRS-Med" target="_blank">
+            <span class="hf-emoji">🩺</span>
+            <span class="hf-name">huyquoctrinh/PRS-Med</span>
+            <span class="hf-desc">Position reasoning segmentation · 116k</span>
+        </a>
+        <a class="hf-row" href="https://huggingface.co/datasets/huyquoctrinh/PRS-Med-image" target="_blank">
+            <span class="hf-emoji">🩺</span>
+            <span class="hf-name">huyquoctrinh/PRS-Med-image</span>
+            <span class="hf-desc">Image split of PRS-Med</span>
+        </a>
+        <a class="hf-row" href="https://huggingface.co/datasets/huyquoctrinh/SpatialMed" target="_blank">
+            <span class="hf-emoji">🧭</span>
+            <span class="hf-name">huyquoctrinh/SpatialMed</span>
+            <span class="hf-desc">Medical spatial reasoning · 13.6k</span>
+        </a>
+        <a class="hf-row" href="https://huggingface.co/datasets/huyquoctrinh/WMDPplusplus" target="_blank">
+            <span class="hf-emoji">🔍</span>
+            <span class="hf-name">huyquoctrinh/WMDPplusplus</span>
+            <span class="hf-desc">Context attribution evaluation</span>
+        </a>
+
+        <div style="margin-top:1.4rem;">
+            <a class="hf-cta" href="https://huggingface.co/huyquoctrinh" target="_blank">
+                🤗 See everything on Hugging Face <i class="fas fa-arrow-right" style="font-size:0.75rem;"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         OPEN SOURCE
+    ═══════════════════════════════════ -->
+    <section id="opensource">
+        <h2 class="section-title"><i class="fab fa-github icon"></i> Open Source</h2>
+
+        <a class="repo-card" href="https://github.com/SongGen-AI/LLambada" target="_blank">
+            <div class="repo-card-icon"><i class="fab fa-github"></i></div>
+            <div class="repo-card-body">
+                <h3>SongGen-AI / LLambada</h3>
+                <p>Open-source music generation project.</p>
+            </div>
+        </a>
+
+        <a class="repo-card" href="https://github.com/huyquoctrinh/PRS-Med" target="_blank">
+            <div class="repo-card-icon"><i class="fab fa-github"></i></div>
+            <div class="repo-card-body">
+                <h3>huyquoctrinh / PRS-Med</h3>
+                <p>Official implementation of PRS-Med — position reasoning segmentation in medical imaging.</p>
+            </div>
+        </a>
+    </section>
+
+</main>
+
+<footer>
+    <!-- Visitor map — replace YOUR_MAPMYVISITORS_ID with your `d=` value. -->
+    <div class="visitor-map">
+        <h4>Visitors</h4>
+        <div class="visitor-map-frame">
+            <script type="text/javascript" id="mapmyvisitors"
+                    src="https://mapmyvisitors.com/map.js?cl=ffffff&w=280&t=tt&d=YOUR_MAPMYVISITORS_ID&co=1900ff&ct=1a1a1a&cmo=3acc3a&cmn=ff5353"></script>
+        </div>
+    </div>
+    &copy; 2026 Quoc-Huy Trinh
+</footer>
+
+</body>
+</html>
